@@ -4,28 +4,43 @@ name: CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Build
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: npm install
+        run: npm install
+      - name: 11ty build
+        run: npx @11ty/eleventy
+      - name: Resume build
         run: |
-          npm install
-          npx @11ty/eleventy
           npm run build-resume-html
           npm run build-resume-pdf
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
         with:
-          branch: gh-pages
-          folder: dist
+          path: dist/
+        uses: actions/upload-pages-artifact@v1
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
