@@ -20,6 +20,8 @@ jobs:
       - name: Run build scripts
         run: |
           npx @11ty/eleventy
+          npm run build-resume-html
+          npm run build-resume-pdf
 
       - name: Deploy distribution
         uses: JamesIves/github-pages-deploy-action@v4
