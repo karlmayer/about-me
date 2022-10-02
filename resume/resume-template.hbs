@@ -117,16 +117,17 @@
 					<section class="item">
 				{{/if}}
 				<header>
-					{{#if name}}
-					<h3 class="name">{{name}}</h3>
-					{{/if}}
-				</header>
 				{{#if position}}
-				<span class="position">
-					{{position}}
-				</span>
+					<h3 class="name">
+						{{position}}
+					</h3>
 				{{/if}}
-
+				</header>
+				{{#if name}}
+					<span class="position">
+						{{name}}
+					</span>
+				{{/if}}
 				{{#if startDate}}
 				<span class="startDate">
 					{{date startDate}}
@@ -155,6 +156,62 @@
 				</ul>
 				{{/if}}
 			</section>
+			{{/each}}
+		</section>
+		{{/if}}
+
+				{{#if resume.awards.length}}
+		<section id="awards">
+			<h2>Awards</h2>
+			{{#each resume.awards}}
+			<div class="item">
+				{{#if title}}
+					<span class="title">{{title}}</span>
+				{{/if}}
+				{{#if awarder}}
+					<span class="awarder">{{awarder}}</span>
+				{{/if}}
+				{{#if date}}
+					<span class="date">{{date date}}</span>
+				{{/if}}
+				{{#if summary}}
+					<div class="summary">
+						<p>{{summary}}</p>
+					</div>
+				{{/if}}
+			</div>
+			{{/each}}
+		</section>
+		{{/if}}
+
+		{{#if resume.publications.length}}
+		<section id="publications">
+			<h2>Publications</h2>
+			{{#each resume.publications}}
+			<div class="item">
+				{{#if url}}
+					<a href="{{url}}" target="#">
+				{{/if}}
+				{{#if name}}
+					<span class="publication">{{name}}</span>
+				{{/if}}
+				{{#if url}}
+					</a>
+				{{/if}}
+				{{#if publisher}}
+					<span class="publisher">{{publisher}}</span>
+				{{/if}}
+				{{#if releaseDate}}
+					<span class="startDate">
+						{{date releaseDate}}
+					</span>
+				{{/if}}
+				{{#if summary}}
+				<div class="summary">
+					<p>{{summary}}</p>
+				</div>
+				{{/if}}
+			</div>
 			{{/each}}
 		</section>
 		{{/if}}
@@ -293,62 +350,6 @@
 		</section>
 		{{/if}}
 
-		{{#if resume.awards.length}}
-		<section id="awards">
-			<h2>Awards</h2>
-			{{#each resume.awards}}
-			<div class="item">
-				{{#if title}}
-					<span class="title">{{title}}</span>
-				{{/if}}
-				{{#if awarder}}
-					<span class="awarder">{{awarder}}</span>
-				{{/if}}
-				{{#if date}}
-					<span class="date">{{date date}}</span>
-				{{/if}}
-				{{#if summary}}
-					<div class="summary">
-						<p>{{summary}}</p>
-					</div>
-				{{/if}}
-			</div>
-			{{/each}}
-		</section>
-		{{/if}}
-
-		{{#if resume.publications.length}}
-		<section id="publications">
-			<h2>Publications</h2>
-			{{#each resume.publications}}
-			<div class="item">
-				{{#if url}}
-					<a href="{{url}}" target="#">
-				{{/if}}
-				{{#if name}}
-					<span class="publication">{{name}}</span>
-				{{/if}}
-				{{#if url}}
-					</a>
-				{{/if}}
-				{{#if publisher}}
-					<span class="publisher">{{publisher}}</span>
-				{{/if}}
-				{{#if releaseDate}}
-					<span class="startDate">
-						{{date releaseDate}}
-					</span>
-				{{/if}}
-				{{#if summary}}
-				<div class="summary">
-					<p>{{summary}}</p>
-				</div>
-				{{/if}}
-			</div>
-			{{/each}}
-		</section>
-		{{/if}}
-
 		{{#if resume.languages.length}}
 		<section id="languages">
 			<h2>Languages</h2>
@@ -413,7 +414,7 @@
 
 		{{#resume.meta}}
 			<section id="meta">
-				My resume is also available as YAML at <a href="{{url}}">{{url}}</a>; rendered using <a href="https://jsonresume.org/">https://jsonresume.org/</a>.
+				For programmers &amp; data geeks, my resume is <a href="{{url}}">available as a YAML data file</a> and rendered using <a href="https://jsonresume.org/">https://jsonresume.org/</a>
 			</section>
 		{{/resume.meta}}
 	</div>
