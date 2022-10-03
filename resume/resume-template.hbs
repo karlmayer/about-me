@@ -160,30 +160,6 @@
 		</section>
 		{{/if}}
 
-				{{#if resume.awards.length}}
-		<section id="awards">
-			<h2>Awards</h2>
-			{{#each resume.awards}}
-			<div class="item">
-				{{#if title}}
-					<span class="title">{{title}}</span>
-				{{/if}}
-				{{#if awarder}}
-					<span class="awarder">{{awarder}}</span>
-				{{/if}}
-				{{#if date}}
-					<span class="date">{{date date}}</span>
-				{{/if}}
-				{{#if summary}}
-					<div class="summary">
-						<p>{{summary}}</p>
-					</div>
-				{{/if}}
-			</div>
-			{{/each}}
-		</section>
-		{{/if}}
-
 		{{#if resume.publications.length}}
 		<section id="publications">
 			<h2>Publications</h2>
@@ -210,6 +186,30 @@
 				<div class="summary">
 					<p>{{summary}}</p>
 				</div>
+				{{/if}}
+			</div>
+			{{/each}}
+		</section>
+		{{/if}}
+
+		{{#if resume.awards.length}}
+		<section id="awards">
+			<h2>Awards</h2>
+			{{#each resume.awards}}
+			<div class="item">
+				{{#if title}}
+					<span class="title">{{title}}</span>
+				{{/if}}
+				{{#if awarder}}
+					<span class="awarder">{{awarder}}</span>
+				{{/if}}
+				{{#if date}}
+					<span class="date">{{date date}}</span>
+				{{/if}}
+				{{#if summary}}
+					<div class="summary">
+						<p>{{summary}}</p>
+					</div>
 				{{/if}}
 			</div>
 			{{/each}}

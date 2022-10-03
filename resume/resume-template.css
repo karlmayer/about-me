@@ -5,17 +5,6 @@ body {
 	margin: 0;
 }
 
-@media print {
-	body {
-		margin: 3em;
-	}
-
-	.page-break {
-		margin-top: 3em;
-		page-break-before: always;
-	}
-}
-
 em {
 	color: #999;
 }
@@ -54,8 +43,8 @@ blockquote {
 /* Resume heading */
 .heading header h1 {
 	font-size: 180%;
-	margin: 0.5em 0;
 	font-weight: 600;
+	margin: 0;
 }
 
 .heading header h2 {
@@ -166,5 +155,20 @@ section h2 {
 	margin: 1em 0 1em;
 	border-bottom: 0;
 	font-size: 80%;
-	color: gray;
+	color: #404040;
+}
+
+@media print {
+	body {
+		margin: 5em 4em 5em 4em;
+	}
+
+	.page-break {
+		margin-top: 5em;
+		page-break-before: always;
+	}
+
+	a {
+		color: #404040;
+	}
 }
