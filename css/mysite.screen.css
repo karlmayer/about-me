@@ -236,7 +236,7 @@ p {
 .fn {
     background: #fff;
     height: 61px;
-    font-family: "Bradley Hand ITC", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: "Bradley Hand ITC", "Bradley Hand", Haettenschweiler, "Arial Narrow Bold", sans-serif;
     text-align: center;
     padding-top: 10px;
 }
