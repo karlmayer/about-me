@@ -6,8 +6,7 @@ layout: blog-post
 ---
 
 <!-- Excerpt Start -->
-Hi, I'm Karl. I guide and shape IT architecture at [Eli Lilly](http://lilly.com/). Aspiring to follow the blogging footsteps of tech legends like [Jeff Atwood](https://blog.codinghorror.com/),
-[Martin Fowler](https://martinfowler.com/), [Joel Spolsky](https://www.joelonsoftware.com/), [Scott Hanselman](https://www.hanselman.com/) and others, I thought I'd start my own.
+Hi, I'm Karl. I guide and shape IT architecture at [Eli Lilly](http://lilly.com/). Aspiring to follow the blogging footsteps of tech legends like [Jeff Atwood](https://blog.codinghorror.com/), [Martin Fowler](https://martinfowler.com/), [Joel Spolsky](https://www.joelonsoftware.com/), [Scott Hanselman](https://www.hanselman.com/) and others, I thought I'd start my own.
 
 I focus on digital strategy, effective communication, innovation, and mentoring through a _'architecture, architects, and architecting'_ lens. In addition, I find time daily to stay hands-on-keyboard and up-to-date on tech and innovation news, which I look forward to covering here.
 
